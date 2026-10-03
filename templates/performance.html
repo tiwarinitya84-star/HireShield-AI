@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Model Performance | HireShield AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .performance-page {
+            min-height: 100vh;
+            padding: 40px 20px 60px;
+        }
+
+        .performance-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .performance-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .performance-header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .performance-header p {
+            opacity: 0.75;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .metric-card {
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+        }
+
+        .metric-card h2 {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .metric-card p {
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        .dashboard-card {
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+        }
+
+        .dashboard-card h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .confusion-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .confusion-table th,
+        .confusion-table td {
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .confusion-table th {
+            font-weight: 600;
+        }
+
+        .model-info {
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.10);
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .performance-header h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="performance-page">
+
+    <div class="performance-container">
+
+        <div class="performance-header">
+            <h1>📊 Model Performance</h1>
+            <p>
+                Performance metrics of the HireShield AI fake job detection model
+            </p>
+        </div>
+
+
+        <!-- Metrics -->
+
+        <div class="metrics-grid">
+
+            <div class="metric-card">
+                <p>Accuracy</p>
+                <h2>98.38%</h2>
+            </div>
+
+            <div class="metric-card">
+                <p>Fake Job Precision</p>
+                <h2>80%</h2>
+            </div>
+
+            <div class="metric-card">
+                <p>Fake Job Recall</p>
+                <h2>88%</h2>
+            </div>
+
+            <div class="metric-card">
+                <p>Fake Job F1-Score</p>
+                <h2>84%</h2>
+            </div>
+
+        </div>
+
+
+        <!-- Confusion Matrix -->
+
+        <div class="dashboard-card">
+
+            <h2>Confusion Matrix</h2>
+
+            <table class="confusion-table">
+
+                <tr>
+                    <th></th>
+                    <th>Predicted Real</th>
+                    <th>Predicted Fake</th>
+                </tr>
+
+                <tr>
+                    <th>Actual Real</th>
+                    <td>3366</td>
+                    <td>37</td>
+                </tr>
+
+                <tr>
+                    <th>Actual Fake</th>
+                    <td>21</td>
+                    <td>152</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- Model Information -->
+
+        <div class="dashboard-card">
+
+            <h2>🤖 Model Information</h2>
+
+            <div class="model-info">
+
+                <p>
+                    <strong>Algorithm:</strong>
+                    Logistic Regression
+                </p>
+
+                <p>
+                    <strong>Text Processing:</strong>
+                    TF-IDF Vectorization
+                </p>
+
+                <p>
+                    <strong>Categorical Processing:</strong>
+                    One-Hot Encoding
+                </p>
+
+                <p>
+                    <strong>Class Handling:</strong>
+                    Balanced Class Weights
+                </p>
+
+                <p>
+                    <strong>Dataset Size:</strong>
+                    17,880 job postings
+                </p>
+
+                <p>
+                    <strong>Fake Job Samples:</strong>
+                    866
+                </p>
+
+                <p>
+                    <strong>Real Job Samples:</strong>
+                    17,014
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div style="text-align: center;">
+            <a href="/" class="back-button">
+                ← Back to HireShield AI
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

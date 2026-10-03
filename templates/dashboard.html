@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HireShield AI | Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark border-bottom">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                🛡️ HireShield AI
+            </a>
+
+            <div>
+                <a href="/" class="btn btn-sm btn-outline-light me-2">
+                    Analyze Job
+                </a>
+
+                <a href="/performance" class="btn btn-sm btn-primary">
+                    Model Performance
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Dashboard -->
+    <div class="container py-5">
+
+        <div class="text-center mb-5">
+
+            <h1 class="fw-bold">
+                📊 HireShield AI Dashboard
+            </h1>
+
+            <p class="text-muted">
+                Overview of dataset and machine learning model performance
+            </p>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <div class="row g-4 mb-5">
+
+            <div class="col-md-3">
+                <div class="dashboard-card text-center">
+                    <h2>17,880</h2>
+                    <p>Total Job Postings</p>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="dashboard-card text-center">
+                    <h2>17,014</h2>
+                    <p>Real Jobs</p>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="dashboard-card text-center">
+                    <h2>866</h2>
+                    <p>Fake Jobs</p>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="dashboard-card text-center">
+                    <h2>98.38%</h2>
+                    <p>Model Accuracy</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Model Metrics -->
+
+        <div class="dashboard-section">
+
+            <h3 class="mb-4">
+                🤖 Model Performance
+            </h3>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="metric-card">
+                        <h4>80%</h4>
+                        <p>Fake Job Precision</p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="metric-card">
+                        <h4>88%</h4>
+                        <p>Fake Job Recall</p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="metric-card">
+                        <h4>84%</h4>
+                        <p>Fake Job F1-Score</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Technology -->
+
+        <div class="dashboard-section mt-4">
+
+            <h3 class="mb-4">
+                🧠 Technologies Used
+            </h3>
+
+            <div class="tech-list">
+
+                <span>Python</span>
+                <span>Flask</span>
+                <span>Scikit-learn</span>
+                <span>Pandas</span>
+                <span>NLP</span>
+                <span>TF-IDF</span>
+                <span>One-Hot Encoding</span>
+                <span>Logistic Regression</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <div class="text-center mt-5">
+
+            <a href="/" class="btn btn-primary btn-lg">
+                🔍 Analyze a Job Posting
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <footer class="text-center py-4">
+        HireShield AI • AI-Based Fake Job Posting Detection
+    </footer>
+
+</body>
+
+</html>
